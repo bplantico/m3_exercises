@@ -1,4 +1,5 @@
 require './spec/spec_helper'
+require './services/advice_service'
 
 describe AdviceService do
   before(:each) do
@@ -25,7 +26,7 @@ describe AdviceService do
     expect(actual).to eq(expected)
   end
 
-  it 'can find a piece of advice by id' do
+  it 'can find a piece of advice by search query' do
     advice = @a.search("happiness")
 
     expect(advice).to have_key("total_results")
